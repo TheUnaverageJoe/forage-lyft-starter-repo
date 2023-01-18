@@ -8,4 +8,7 @@ class Car(IServicable):
         self.battery = battery
 
     def needs_service(self) -> bool:
-        pass
+        if self.engine.needs_service() or self.battery.needs_service():
+            return True
+        else:
+            return False
