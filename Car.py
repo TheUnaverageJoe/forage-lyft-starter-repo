@@ -1,6 +1,6 @@
 from IServicable import IServicable
-from IBattery import IBattery
-from IEngine import IEngine
+from Batteries.IBattery import IBattery
+from Engines.IEngine import IEngine
 
 class Car(IServicable):
     def __init__(self, engine: IEngine, battery: IBattery) -> None:

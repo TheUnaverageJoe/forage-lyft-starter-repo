@@ -1,4 +1,4 @@
-from IEngine import IEngine
+from Engines.IEngine import IEngine
 
 class SternmanEngine(IEngine):
     def __init__(self, warning_light_on: bool) -> None:

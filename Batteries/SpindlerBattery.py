@@ -1,4 +1,4 @@
-from IBattery import IBattery
+from Batteries.IBattery import IBattery
 from datetime import datetime
 
 class SpindlerBattery(IBattery):
