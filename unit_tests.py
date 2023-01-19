@@ -39,27 +39,30 @@ class CarComponentTests(unittest.TestCase):
         self.assertFalse(engine.needs_service())
 
     def test_spindler_should_be_serviced(self):
-        today = datetime.today()
-        lsd, cd = today.replace(year=today.year-2), today
+        # should service after 3 years or more
+        lsd = datetime(2020, 6, 15)
+        cd = datetime(2023, 6, 15)
         battery = SpindlerBattery(lsd, cd)
         self.assertTrue(battery.needs_service())
     
     def test_spindler_should_not_be_serviced(self):
-        today = datetime.today()
-        lsd = today.replace(year=today.year-3)
-        cd = datetime.today()
+        #should not be serviced if less than 3 years
+        lsd = datetime(2020, 6, 15)
+        cd = datetime(2023, 6, 14)
         battery = SpindlerBattery(lsd, cd)
         self.assertFalse(battery.needs_service())
 
     def test_nubbin_should_be_serviced(self):
-        today = datetime.today()
-        lsd, cd = today.replace(year=today.year-4), today
+        #should be serviced after 4 years or more
+        lsd = datetime(2020, 6, 15)
+        cd = datetime(2024, 6, 15)
         battery = NubbinBattery(lsd, cd)
         self.assertTrue(battery.needs_service())
 
     def test_nubbin_should_not_be_serviced(self):
-        today = datetime.today()
-        lsd, cd = today.replace(year=today.year-5), today
+        #should not be serviced if less than 4 years
+        lsd = datetime(2020, 6, 15)
+        cd = datetime(2024, 6, 14)
         battery = NubbinBattery(lsd, cd)
         self.assertFalse(battery.needs_service())
 
