@@ -4,7 +4,7 @@ from Engines.IEngine import IEngine
 from Tires.ITire import ITire
 
 class Car(IServicable):
-    def __init__(self, engine: IEngine, battery: IBattery, tires: ITire) -> None:
+    def __init__(self, engine: IEngine, battery: IBattery, tires: ITire = None) -> None:
         self.engine = engine
         self.battery = battery
         self.tires = tires

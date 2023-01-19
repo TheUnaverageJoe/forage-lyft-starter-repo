@@ -13,13 +13,13 @@ class CarFactory():
         return Car(CapuletEngine(last_service_milage, current_milage), SpindlerBattery(last_service_date, current_date), CarriganTire(tire_wear))
 
     def create_glissade(self, current_date: datetime, last_service_date: datetime, current_milage: int, last_service_milage: int, tire_wear: list[4]) -> Car:
-        return Car(WilloughbyEngine(last_service_milage, current_milage), SpindlerBattery(last_service_date, current_date), CarriganTire(tire_wear))
+        return Car(WilloughbyEngine(last_service_milage, current_milage), SpindlerBattery(last_service_date, current_date))
 
     def create_palindrome(self, current_date: datetime, last_service_date: datetime, warning_light_on: bool, tire_wear: list[4]) -> Car:
-        return Car(SternmanEngine(warning_light_on), SpindlerBattery(last_service_date, current_date), CarriganTire(tire_wear))
+        return Car(SternmanEngine(warning_light_on), SpindlerBattery(last_service_date, current_date))
 
     def create_rorschach(self, current_date: datetime, last_service_date: datetime, current_milage: int, last_service_milage: int, tire_wear: list[4]) -> Car:
-        return Car(WilloughbyEngine(last_service_milage, current_milage), NubbinBattery(last_service_date, current_date), OctoprimeTire(tire_wear))
+        return Car(WilloughbyEngine(last_service_milage, current_milage), NubbinBattery(last_service_date, current_date))
 
     def create_thovex(self, current_date: datetime, last_service_date: datetime, current_milage: int, last_service_milage: int, tire_wear: list[4]) -> Car:
-        return Car(CapuletEngine(last_service_milage, current_milage), NubbinBattery(last_service_date, current_date), OctoprimeTire(tire_wear))
+        return Car(CapuletEngine(last_service_milage, current_milage), NubbinBattery(last_service_date, current_date))
